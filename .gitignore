@@ -1,0 +1,14 @@
+# Compiled Object files
+*.o
+
+# Executables
+*.exe
+*.out
+a.out
+stego
+stego.exe
+
+# Output files generated during testing
+stego.bmp
+decode_output.*
+myoutput.*
