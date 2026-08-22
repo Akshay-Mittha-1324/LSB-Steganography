@@ -43,7 +43,7 @@ git clone https://github.com/YourUsername/LSB-Steganography.git
 cd LSB-Steganography
 
 # Compile the project
-gcc main.c encode.c decode.c -o stego
+gcc src/*.c -o stego
 ```
 
 ## 🚀 Usage
@@ -57,7 +57,7 @@ Hide a secret file inside a BMP image.
 ```
 **Example:**
 ```bash
-./stego -e beautiful.bmp secret.txt my_stego.bmp
+./stego -e image_files/beautiful.bmp secret_file/secret.txt image_files/my_stego.bmp
 ```
 *(Note: If the `[output_stego.bmp]` argument is not provided, the program automatically defaults to creating `stego.bmp`)*
 
@@ -70,7 +70,7 @@ Extract the hidden secret file from a Stego image.
 ```
 **Example:**
 ```bash
-./stego -d my_stego.bmp my_decoded_secret
+./stego -d image_files/my_stego.bmp my_decoded_secret
 ```
 *(Note: If the `[output_filename]` is not provided, it defaults to `decode_output`. The program will automatically determine and append the correct extension, e.g., `decode_output.txt`)*
 
@@ -78,14 +78,21 @@ Extract the hidden secret file from a Stego image.
 
 ```text
 📁 LSB-Steganography
-├── 📄 main.c        # Entry point; validates CLI arguments and routes execution
-├── 📄 encode.c      # Implements the bitwise LSB encoding pipeline
-├── 📄 encode.h      # Function prototypes and definitions for encoding
-├── 📄 decode.c      # Implements the bitwise LSB extraction pipeline
-├── 📄 decode.h      # Function prototypes and definitions for decoding
-├── 📄 common.h      # Shared utility macros, magic strings, and status enums
-├── 📄 LICENSE       # MIT License file
-└── 📄 README.md     # Project documentation
+├── 📁 image_files
+│   ├── 📄 beautiful.bmp   # Sample carrier image
+│   └── 📄 stego.bmp       # Generated stego image containing secret data
+├── 📁 secret_file
+│   └── 📄 secret.txt      # Sample secret text file
+├── 📁 src
+│   ├── 📄 main.c          # Entry point; validates CLI arguments and routes execution
+│   ├── 📄 encode.c        # Implements the bitwise LSB encoding pipeline
+│   ├── 📄 encode.h        # Function prototypes and definitions for encoding
+│   ├── 📄 decode.c        # Implements the bitwise LSB extraction pipeline
+│   ├── 📄 decode.h        # Function prototypes and definitions for decoding
+│   └── 📄 common.h        # Shared utility macros, magic strings, and status enums
+├── 📄 LICENSE             # MIT License file
+├── 📄 project_explanation.md # Comprehensive explanation of project theory and implementation
+└── 📄 README.md           # Project documentation
 ```
 
 ## 📜 License
