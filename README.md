@@ -91,7 +91,6 @@ Extract the hidden secret file from a Stego image.
 │   ├── 📄 decode.h        # Function prototypes and definitions for decoding
 │   └── 📄 common.h        # Shared utility macros, magic strings, and status enums
 ├── 📄 LICENSE             # MIT License file
-├── 📄 project_explanation.md # Comprehensive explanation of project theory and implementation
 └── 📄 README.md           # Project documentation
 ```
 
